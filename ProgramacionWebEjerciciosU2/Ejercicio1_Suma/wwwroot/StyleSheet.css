@@ -1,0 +1,40 @@
+﻿html{
+    background-color:dodgerblue;
+}
+
+*{
+    font-family:'Century Gothic';
+}
+
+body {
+    margin:35px;
+    padding:10px;
+    background-color:lightgray;
+    border:1px solid black;
+}
+
+label, input{
+    margin:5px;
+}
+
+h4,p{
+    margin:0;
+}
+
+p{
+    font-size:20px;
+    margin:10PX 0 10px 0;
+    border:1px solid black;
+    padding:10px 0;
+}
+
+h1, h2, h3{
+    margin:0;
+    text-align:center;
+}
+
+footer{
+    font-size:small;
+    font-style:italic;
+    text-align:center;
+}
