@@ -7,11 +7,11 @@
     <a href="javascript:window.history.back();">Regresar</a>
 </nav>
 <h2>@Model.Nombre</h2>
-<h3>@Model.Compositor, @Model.Anyo</h3>
+<h3>@Model.Compositor, @(Model.Anyo==null?"Año Desconocido": Model.Anyo.Value.ToString())</h3>
 
 <iframe width="560" height="315" src="@Model.VideoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <article>    
-    @Model.Letra<br />
+    @Html.Raw(Model.Letra)<br />
 </article>
 
