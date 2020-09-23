@@ -1,0 +1,21 @@
+﻿@model  IEnumerable<Ejercicio4_Pixar.Models.Pelicula>
+@{
+    Layout = "_Layout";
+}
+
+<div id="pelis">
+
+    @foreach (var pelicula in Model)
+    {
+    <div>
+        <a class="imgPelicula" href="bichos.html">
+            <img src="images/portadas/2_p.jpg" alt="Bichos">
+        </a>
+        <div class="nombrePelicula">
+            <p>Bichos</p>
+        </div>
+    </div>
+    }
+    
+</div>
+
