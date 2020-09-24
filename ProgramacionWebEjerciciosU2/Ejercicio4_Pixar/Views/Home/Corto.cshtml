@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Ejercicio4_Pixar.Models.Cortometraje>
+@{
+    Layout = "_Layout";
+}
+
+<div id="principalPeliculas">
+
+    <div id="pelis">
+        @foreach (var corto in Model)
+        {
+            <h1>@corto.IdCategoriaNavigation.Nombre</h1>
+            <div>
+                <a class="imgPelicula" href="~/Cortometrajes/@corto.Nombre.Replace(" ","-")">
+                    <img src="~/images/portadas/@(corto.Id)_pc.jpg" alt="@corto.Nombre">
+                </a>
+                <div class="nombrePelicula">
+                    <p>@corto.Nombre</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

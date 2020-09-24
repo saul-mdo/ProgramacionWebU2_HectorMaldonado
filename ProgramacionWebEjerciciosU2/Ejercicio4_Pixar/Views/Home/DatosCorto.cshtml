@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Ejercicio4_Pixar.Models.Cortometraje>
+
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var corto in Model)
+{
+    <div id="principalVerCorto">
+        <img class="blur" src="images/portadas/@(corto.Id)_pc.jpg">
+        <div class="datosCorto">
+            <h1>@corto.Nombre</h1>
+            <p>
+                @corto.Descripcion
+            </p>
+        </div>
+    </div>
+}
+
+
+
