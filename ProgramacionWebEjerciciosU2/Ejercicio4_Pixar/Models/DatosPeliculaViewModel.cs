@@ -8,7 +8,6 @@ namespace Ejercicio4_Pixar.Models
     public class DatosPeliculaViewModel
     {
         public string Nombre { get; set; }
-
         public int Id { get; set; }
         public string NombreOriginal { get; set; }
         public string Descripcion { get; set; }

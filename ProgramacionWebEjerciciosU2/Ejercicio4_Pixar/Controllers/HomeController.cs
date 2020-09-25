@@ -50,8 +50,6 @@ namespace Ejercicio4_Pixar.Controllers
 
                 vm.Apariciones = context.Apariciones.Include(x => x.IdPeliculaNavigation).Include(x => x.IdPersonajeNavigation).Where(x => x.IdPelicula == pelicula.Id).Select(x => x).ToArray();
 
-
-
                 return View(vm);
             }
         }
@@ -60,8 +58,20 @@ namespace Ejercicio4_Pixar.Controllers
         public IActionResult Corto()
         {
             PixarContext context = new PixarContext();
-            var corto = context.Cortometraje.Include(x => x.IdCategoriaNavigation).OrderBy(x => x.Nombre);
-            return View(corto);
+
+            CortoViewModel cortovm = new CortoViewModel();
+
+            var cortometrajes = context.Cortometraje.OrderBy(x => x.Nombre);
+
+            // EN VIEWMODEL, TENGO UNA VARIABLE LLAMADA CATEGORIAS, TIPO IENUMERABLE<CATEGORIA>.
+            // NECESITO ALMACENAR TODAS LAS CATEGORIAS EN ESA VARIABLE, YA QUE LAS CATEGORIAS TIENEN LA COLECCIÓN DE CORTOMETRAJES.
+
+            // EL INCLUDE SE USA CUANDO ES UNA PROPIEDAD DE NAVEGACION. AQUI NO SE PONE PORQUE "CORTOMETRAJES" DENTRO DE CATEGORIAS ES UNA
+            // PROPIEDAD CON TODOS LOS CORTOMETRAJES.
+
+            cortovm.Categorias = context.Categoria.Include(x=>x.Cortometraje).OrderBy(x=>x.Nombre);
+
+            return View(cortovm);
         }
 
         [Route("Cortometrajes/{id}")]
