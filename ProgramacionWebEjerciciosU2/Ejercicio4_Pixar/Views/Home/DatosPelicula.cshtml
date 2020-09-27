@@ -26,14 +26,14 @@
                 
                 <div class="personajes">
                     <h2>Personajes</h2>
-                    @foreach (var peli in Model.Apariciones)
+                    @foreach (var personaje in Model.Apariciones)
                     {
                         <div>
                             <a>
-                                <img src="~/images/personajes/@(peli.IdPersonajeNavigation.Id).jpg" alt="@peli.IdPersonajeNavigation.Nombre">
+                                <img src="~/images/personajes/@(personaje.IdPersonajeNavigation.Id).jpg" alt="@personaje.IdPersonajeNavigation.Nombre">
                             </a>
                             <div class="nombrePelicula">
-                                <p>@peli.IdPersonajeNavigation.Nombre</p>
+                                <p>@personaje.IdPersonajeNavigation.Nombre</p>
                             </div>
                         </div>
                     }

@@ -48,7 +48,7 @@ namespace Ejercicio4_Pixar.Controllers
                 vm.Descripcion = pelicula.Descripción;
                 vm.Id = pelicula.Id;
 
-                vm.Apariciones = context.Apariciones.Include(x => x.IdPeliculaNavigation).Include(x => x.IdPersonajeNavigation).Where(x => x.IdPelicula == pelicula.Id).Select(x => x).ToArray();
+                vm.Apariciones = context.Apariciones.Include(x => x.IdPeliculaNavigation).Include(x => x.IdPersonajeNavigation).Where(x => x.IdPelicula == pelicula.Id);
 
                 return View(vm);
             }
