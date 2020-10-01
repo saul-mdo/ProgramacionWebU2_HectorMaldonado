@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Ejercicio5_Animales.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,15 @@ namespace Ejercicio5_Animales.Controllers
 
             var especies = context.Clase.Include(x => x.Especies).Where(x => x.Nombre.ToUpper() == nombre).OrderBy(x => x.Nombre);
 
-            return View(especies);
+            if (especies.Count() == 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(especies);
+            }
+
         }
     }
 }
