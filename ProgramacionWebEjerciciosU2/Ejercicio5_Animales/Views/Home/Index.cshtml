@@ -1,25 +1,29 @@
-﻿@model IEnumerable<Ejercicio5_Animales.Models.Clase>
+﻿@model Ejercicio5_Animales.Models.ViewModels.IndexViewModel
 @{
     Layout = "_Layout";
 }
 
 <div class="slides">
-    <img src="~/images/carousel1.jpg">
+        <img src="~/images/carousel@(Model.NumImagen).jpg">
+
+    
 </div>
 
 <h1>Clasificación de los vertebrados</h1>
 
 <div class="clases">
-    @foreach (var clase in Model)
+    @foreach (var clases in Model.Clases)
     {
-        <div>
-            <a href="~/Especie/@clase.Nombre.Replace(" ","-")">
-                <img src="~/clases/@(clase.Id).jpg">
-                <h1>@clase.Nombre</h1>
-                <p>@clase.Descripcion</p>
-            </a>
-        </div>
+    <div>
+        <a href="~/Especie/@clases.Nombre">
+            <img src="~/clases/@(clases.Id).jpg">
+            <h1>@clases.Nombre</h1>
+            <p>@clases.Descripcion</p>
+        </a>
+    </div>
     }
+        
+    
 
 
 </div>
