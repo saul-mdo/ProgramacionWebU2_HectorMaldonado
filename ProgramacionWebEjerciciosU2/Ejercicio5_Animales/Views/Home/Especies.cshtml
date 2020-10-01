@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Ejercicio5_Animales.Models.Clase>
+@{
+    Layout = "_Layout";
+}
+@foreach (var clase in Model)
+{
+    <h1>@clase.Nombre</h1>
+
+    <ul class="especies">
+        @foreach (var especies in clase.Especies)
+        {
+            <li>
+                <div>
+                    <img src="~/especies/@(especies.Id).jpg">
+                </div>
+                <h2>@especies.Especie </h2>
+                <p><label>Habitat: </label>@especies.Habitat</p>
+                <p><label>Peso: </label>@especies.Peso</p>
+                <p><label>Tamaño: </label>@especies.Tamaño</p>
+                <p>@especies.Observaciones</p>
+            </li>
+        }
+    </ul>
+
+}
